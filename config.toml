@@ -2,3 +2,12 @@ baseURL = "https://www.kailunli.me"
 languageCode = "en-us"
 title = "Kailun's Blog"
 theme = "hugo-theme-m10c"
+
+[params]
+    author = "Kailun Li"
+    description = "I'm an university new grad and a n00b software engineer. This blog is primarily about my learning path and (tech and non-tech) thoughts."
+    avatar = "avatar.jpg"
+
+    [[params.social]]
+        name = "github"
+        url = "https://github.com/Kailun2047"

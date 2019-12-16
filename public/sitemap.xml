@@ -3,26 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>www.kailunli.me/posts/my-first-post/</loc>
+    <loc>https://www.kailunli.me/</loc>
     <lastmod>2019-12-15T16:18:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>www.kailunli.me/</loc>
+    <loc>https://www.kailunli.me/posts/my-first-post/</loc>
     <lastmod>2019-12-15T16:18:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>www.kailunli.me/posts/</loc>
+    <loc>https://www.kailunli.me/posts/</loc>
     <lastmod>2019-12-15T16:18:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>www.kailunli.me/categories/</loc>
+    <loc>https://www.kailunli.me/categories/</loc>
   </url>
   
   <url>
-    <loc>www.kailunli.me/tags/</loc>
+    <loc>https://www.kailunli.me/tags/</loc>
   </url>
   
 </urlset>
