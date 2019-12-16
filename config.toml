@@ -11,3 +11,6 @@ theme = "hugo-theme-m10c"
     [[params.social]]
         name = "github"
         url = "https://github.com/Kailun2047"
+    [[params.social]]
+        name = "linkedin"
+        url = "https://www.linkedin.com/in/kailun-li-45892314a/"
