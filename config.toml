@@ -1,4 +1,4 @@
-baseURL = "www.kailunli.me"
+baseURL = "https://www.kailunli.me"
 languageCode = "en-us"
 title = "Kailun's Blog"
 theme = "hugo-theme-m10c"
