@@ -1,5 +1,5 @@
 ---
-title: "How This Blog was Built"
+title: "Blog Set Up"
 date: 2019-12-15T16:18:54-05:00
 draft: false
 tags: ['Hugo']
@@ -11,7 +11,7 @@ This blog is set up using [Hugo](https://gohugo.io/) framework. It's a fast and 
 Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the `config.toml` file. More flexible content management done through Hugo variables and functions in extra HTML files. I'm yet very new to Hugo, so hopefully I can dive deeper later while mataining this blog and share more of it here (stay tuned!).
 
 # Deployment
-A common way to deploy a personal site is to use Github pages (`username.github.io`). While that cound be a pretty good choice, I decided to use [Netlify](https://www.netlify.com/) as an alternative for two reasons: first, I had (almost) no experience in setting up and maintaining my own domain and I want to get my hands dirty; second, Netlify provides easy access to CI/CD, SSL certificate, etc., saving me some time to configure these on my own. Netlify is easy to use. There's also an official tutorial to deploy Hugo site to Netlify [here](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/).
+A common way to deploy a personal site is to use Github pages (`username.github.io`). While that cound be a pretty good choice, I decided to use [Netlify](https://www.netlify.com/) as an alternative for two reasons: first, I had little experience in setting up and maintaining my own domain and I want to get my hands dirty; second, Netlify provides easy access to CI/CD, SSL certificate, etc., saving me some time to configure these on my own. Netlify is easy to use. There's also an official tutorial to deploy Hugo site to Netlify [here](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/).
 
 The process can be briefly described as following:
 1. Sign up on Netlify and bind a new site with the repo of your blog;
