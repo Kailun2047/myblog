@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Kailun&#39;s Blog</title>
+    <link>https://www.kailunli.me/tags/hugo/</link>
+    <description>Recent content in Hugo on Kailun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Dec 2019 16:18:54 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.kailunli.me/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How This Blog was Built</title>
+      <link>https://www.kailunli.me/posts/my-first-post/</link>
+      <pubDate>Sun, 15 Dec 2019 16:18:54 -0500</pubDate>
+      
+      <guid>https://www.kailunli.me/posts/my-first-post/</guid>
+      <description>Framework This blog is set up using Hugo framework. It&#39;s a fast and flexible framework written in Golang, and is a popular static site generator. There are various types of themes that are avaiable for use in Hugo, and the one I&#39;m using is called m10c.
+Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the config.</description>
+    </item>
+    
+  </channel>
+</rss>

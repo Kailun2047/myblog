@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>About This Blog // Kailun&#39;s Blog</title>
+    <title>How This Blog was Built // Kailun&#39;s Blog</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.61.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,11 +11,13 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About This Blog"/>
-<meta name="twitter:description" content="Welcome to my personal blog!"/>
+<meta name="twitter:title" content="How This Blog was Built"/>
+<meta name="twitter:description" content="Framework This blog is set up using Hugo framework. It&#39;s a fast and flexible framework written in Golang, and is a popular static site generator. There are various types of themes that are avaiable for use in Hugo, and the one I&#39;m using is called m10c.
+Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the config."/>
 
-    <meta property="og:title" content="About This Blog" />
-<meta property="og:description" content="Welcome to my personal blog!" />
+    <meta property="og:title" content="How This Blog was Built" />
+<meta property="og:description" content="Framework This blog is set up using Hugo framework. It&#39;s a fast and flexible framework written in Golang, and is a popular static site generator. There are various types of themes that are avaiable for use in Hugo, and the one I&#39;m using is called m10c.
+Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the config." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.kailunli.me/posts/my-first-post/" />
 <meta property="article:published_time" content="2019-12-15T16:18:54-05:00" />
@@ -46,7 +48,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">About This Blog</h1>
+      <h1 class ="post-title">How This Blog was Built</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -60,11 +62,38 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
-        </div></div>
+          3 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://www.kailunli.me/tags/hugo/">Hugo</a></div></div>
     </header>
     <div class="post-content">
-      <p>Welcome to my personal blog!</p>
+      <h1 id="framework">Framework</h1>
+<p>This blog is set up using <a href="https://gohugo.io/">Hugo</a> framework. It's a fast and flexible framework written in Golang, and is a popular static site generator. There are various types of themes that are avaiable for use in Hugo, and the one I'm using is called <a href="https://themes.gohugo.io/hugo-theme-m10c/">m10c</a>.</p>
+<p>Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the <code>config.toml</code> file. More flexible content management done through Hugo variables and functions in extra HTML files. I'm yet very new to Hugo, so hopefully I can dive deeper later while mataining this blog and share more of it here (stay tuned!).</p>
+<h1 id="deployment">Deployment</h1>
+<p>A common way to deploy a personal site is to use Github pages (<code>username.github.io</code>). While that cound be a pretty good choice, I decided to use <a href="https://www.netlify.com/">Netlify</a> as an alternative for two reasons: first, I had (almost) no experience in setting up and maintaining my own domain and I want to get my hands dirty; second, Netlify provides easy access to CI/CD, SSL certificate, etc., saving me some time to configure these on my own. Netlify is easy to use. There's also an official tutorial to deploy Hugo site to Netlify <a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">here</a>.</p>
+<p>The process can be briefly described as following:</p>
+<ol>
+<li>Sign up on Netlify and bind a new site with the repo of your blog;</li>
+<li>Purchase you domain and use it to customize the Netlify domain;</li>
+<li>Set the name servers of your domain to be the ones identified by Netlify;</li>
+<li>Set the deploy setting (base path, build command, publish directory, etc.) on Netlify, then build and deploy.</li>
+</ol>
+<p>Though we could follow the tutorial most of the time, I still made a few mistakes when doing it myself. Some of them are:</p>
+<ol>
+<li>When configuring the deploy environment variables, make sure to set <code>HUGO_VERSION</code> to be the version we are using (which can be shown by <code>hugo version</code> command). Otherwise the deploy log may show you the exit code 255.</li>
+<li>Though we can quickly get our Hugo site to work locally, it might be rendered incorrectly on remote end. In my case I made three mistakes (make sure you avoid these!):</li>
+</ol>
+<ul>
+<li>when adding a theme repo, I used <code>git clone</code> (Netlify dislikes this) instead of <code>git submodule add</code></li>
+<li>in <code>config.toml</code> file, I used <code>http</code> at first instead of <code>https</code></li>
+<li>in Netlify deploy settings, I used <code>hugo</code> as build command. But I had the status of my test post as draft, meaning I need <code>hugo -D</code> to include the drafts.</li>
+</ul>
+<p>Fortunately, I figured out these mistakes and have this blog working now. So keep lerning, keep blogging from now on!</p>
 
     </div>
     <div class="post-footer">

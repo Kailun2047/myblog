@@ -6,18 +6,29 @@
     <description>Recent content in Posts on Kailun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Dec 2019 16:18:54 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 28 Dec 2019 12:38:25 -0500</lastBuildDate>
     
 	<atom:link href="https://www.kailunli.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About This Blog</title>
+      <title>Revisit Concurrent Programming in Java</title>
+      <link>https://www.kailunli.me/posts/java-concurrent/</link>
+      <pubDate>Sat, 28 Dec 2019 12:38:25 -0500</pubDate>
+      
+      <guid>https://www.kailunli.me/posts/java-concurrent/</guid>
+      <description>Recently I&#39;ve gone through the &amp;ldquo;Concurrent Programming in Java&amp;rdquo; course on Coursera. Though the contents involved are very fundamental, I felt it&#39;s necessary to give them a revisit since they are building blocks of more advanced learning in concurrent and distributed world.
+Overview Overall, I figured this course followed a bottom-up approach. It first introduces low-level Java concurrent primitives, and then go through some of the high-level approaches that solve some of the problems when programming with the low-level concepts.</description>
+    </item>
+    
+    <item>
+      <title>How This Blog was Built</title>
       <link>https://www.kailunli.me/posts/my-first-post/</link>
       <pubDate>Sun, 15 Dec 2019 16:18:54 -0500</pubDate>
       
       <guid>https://www.kailunli.me/posts/my-first-post/</guid>
-      <description>Welcome to my personal blog!</description>
+      <description>Framework This blog is set up using Hugo framework. It&#39;s a fast and flexible framework written in Golang, and is a popular static site generator. There are various types of themes that are avaiable for use in Hugo, and the one I&#39;m using is called m10c.
+Hugo is fairly easy to get started with, and the basic use of it might only involve a few CLI command. Most of the configurations and contents can be edited by adding key-value pairs in the config.</description>
     </item>
     
   </channel>
