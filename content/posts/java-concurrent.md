@@ -196,12 +196,7 @@ In the above snippet, `this.bow(Friend bower)` means `bower` bows to `this`, and
 ### A Comparison
 From a random number generator metric, we can easily observe that the intrinsic locks are way more heavy weighted. Another interesting observation is that, by assigning a booelan `fair` variable in the constructor of `ReentrantLock`, we will have a fair lock (meaning the first thread calling for the lock obtains the lock first), and this type of lock costs a lot more. Though heavy-weighted, the intrinsic locks don't provide any fairness.
 
-![alt comparison1][single-core]
-
-[single-core]: /images/java-concurrent/single-processor.jpg "single processor"
-
-![alt comparison2][dual-core]
-[dual-core]: /images/java-concurrent/dual-core.jpg "dual core"
+![alt comparison](/images/java-concurrent/single-processor.jpg "single processor") ![alt comparison](/images/java-concurrent/dual-core.jpg "dual core")
 
 # Conclusion
 In this article we revisited the basic thread and lock primitives in Java, categorized the locks, and made some simple comparison. Hopefully the higher-level concurrent concepts/approaches can be covered in later posts.
