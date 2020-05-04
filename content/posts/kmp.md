@@ -53,7 +53,7 @@ Let's see how the program execute in the example where `text="ABCABCDAC"` and `p
 
 ![alt text][kmp_example]
 
-[kmp_example]: /images/kmp/kmp_examplle.jpg "KMP example"
+[kmp_example]: /images/kmp/kmp_example.jpg "KMP example"
 
 Now it's time to move back to state machine construction. According to the meaning of `next` array, we can see that the first 2 entries of `next` are gonna be 0. We can use the snippet below to construct the rest of the table:
 
