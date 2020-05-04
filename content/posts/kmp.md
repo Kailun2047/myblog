@@ -2,6 +2,7 @@
 title: "Quick Review of KMP Algorithm"
 date: 2020-05-02T23:40:40-07:00
 draft: false
+tags: ['Algorithm']
 ---
 
 Published in 1977, the Knuth-Morris-Pratt algorithm can search substring pattern in time linear to the total string length. Recently I encountered 2 Leetcode questions (1367, 1392) that can be effectively solved by KMP, and therefore want to use this post as a quick refresher and go through the basic mechanism and some concrete examples of this algorithm. (A nice video explanation of KMP can be found [here](https://www.youtube.com/watch?v=uKr9qIZMtzw&t=764s)
