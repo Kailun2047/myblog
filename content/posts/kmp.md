@@ -11,7 +11,7 @@ In a naive substring search approach, when we find a mismatch between the patter
 
 ![alt text][naive]
 
-[naive]: /images/kmp/substring_search_naive.png "naive search"
+[naive]: /images/kmp/substring_search_naive.jpg "naive search"
 
 # The Algorithm
 There are two major parts of the algorithm: 
@@ -22,7 +22,7 @@ Since the table construction is the trickier part, we'll put it aside and take a
 
 ![alt text][sample_table]
 
-[sample_table]: /images/kmp/kmp_table.png "sample tables"
+[sample_table]: /images/kmp/kmp_table.jpg "sample tables"
 
 In the above examples, `p[j]` is the `j`th character of the pattern, and `next[j]` is the length of the substring of `p[0:j]` that satisfies: (1) this substring is a prefix of `p[0:j]`; (2) this substring is also a suffix of `p[0:j]`; (3) this substring is not `p[0:j]` itself. For example, when the pattern is `ABCDABD`, `next[5]` is 1 because the longest substring of `ABCDA` that is both its prefix and its suffix is `A`, which is of length 1. As for the last entry of the `next` array, it is appended there solely for computation (so that we know there's a match when we find one). When we use this table to traverse the input `text`, we can start with `j = 0`, and then use the table to find the next character in the pattern to compare with when there is a **mismatch**.
 
@@ -53,7 +53,7 @@ Let's see how the program execute in the example where `text="ABCABCDAC"` and `p
 
 ![alt text][kmp_example]
 
-[kmp_example]: /images/kmp/kmp_examplle.png "KMP example"
+[kmp_example]: /images/kmp/kmp_examplle.jpg "KMP example"
 
 Now it's time to move back to state machine construction. According to the meaning of `next` array, we can see that the first 2 entries of `next` are gonna be 0. We can use the snippet below to construct the rest of the table:
 
@@ -77,7 +77,7 @@ The construction code looks simple because it's quite similar to the iteration c
 
 ![alt text][table_construction]
 
-[table_construction]: /images/kmp/table_construction.png "table construction"
+[table_construction]: /images/kmp/table_construction.jpg "table construction"
 
 First of all, we can be sure that `next[0]` and `next[1]` are 0 according to the meaning of `next` array. Then when we start the for loop we need to set the initial value of `i` to 1 because the frist two entries are already filled. `j` starts from 0 because we are trying to compare the suffix to the prefix of `p[0:i]`, and the shortext prefix would be `p[0]`. In `(a)` we find that `p[1] == p[0] == 'A'`, so we append `next[0] + 1` to `next`; in `(b)` `p[2]` and `p[1]` mismatches, so we set `j` to `next[j]` (which is 0) and append it; in `(3)` we find that `p[3]` and `p[0]` matches, so we increment `j` to 1 and append it.
 
