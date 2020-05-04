@@ -12,7 +12,7 @@ Overall, I figured this course followed a bottom-up approach. It first introduce
 
 I drew this simple diagram to illustrate the relationships between some basic concurrent concepts/approaches:
 
-![alt test][structure]
+![alt text][structure]
 
 [structure]: /images/java-concurrent/PCDP.jpg "course structure"
 
@@ -189,7 +189,7 @@ public class SafeLockTest {
 
 In the above snippet, `this.bow(Friend bower)` means `bower` bows to `this`, and `this.bowBack(Friend bower)` means `bower` bows back to `this`. `impendingBow()` basicallly tries to acquires the locks of both bower and bowee, and backs off if the two locks can not be acquired -- this is the most important step to avoid deadlock (deadlock can be easily produced if we write `bow()` and `bowBack()` methods above as two simple synchronized methods). The result of above code is presented below:
 
-![alt test][output]
+![alt text][output]
 
 [output]: /images/java-concurrent/bow.jpg "execution output"
 
