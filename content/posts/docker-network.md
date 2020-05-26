@@ -73,7 +73,7 @@ Now traffic from CIDR `123.456.0.0/16` in `my_netns` namespace can be received b
 
 ![alt text][container-network]
 
-[container-network]: /images/docker-network/container-network.jpg "container network connected to network namespace"
+[container-network]: /images/docker-network/container_network.jpg "container network connected to network namespace"
 
 # Iptables
 
