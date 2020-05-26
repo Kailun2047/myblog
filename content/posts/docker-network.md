@@ -13,11 +13,15 @@ Docker leverages Linux network namespaces for network isolation, like the way it
 
 A new network namespace can be created by the command:
 
-`sudo ip netns add <name>`
+```shell
+sudo ip netns add <name>
+```
 
 For example, if we add a network namespace `my_netns` by `sudo ip netns add my_netns`, we can check and see this new namespace is created by running the following command:
 
-`sudo ip netns list | grep "my_netns"`
+```shell
+sudo ip netns list | grep "my_netns"
+```
 
 `ip netns list` will list all network namespaces in `/var/run/netns`. This will output something like:
 
@@ -25,11 +29,15 @@ For example, if we add a network namespace `my_netns` by `sudo ip netns add my_n
 
 Now that we have a new network namespace, we want to move a network interface under it so that we can direct traffic into or out of it. In our example we will move a network interface `eth1` from the default network namespace to `my_netns`. This can be done using:
 
-`sudo ip link set eth1 netns my_netns`
+```shell
+sudo ip link set eth1 netns my_netns
+```
 
 And we can then verify that `eth1` is moved under `my_netns` with:
 
-`sudo ip netns exec my_netns ip link list | grep "eth1"`
+```shell
+sudo ip netns exec my_netns ip link list | grep "eth1"
+```
 
 Command following `ip netns exec <netns_name>` will be executed under the specified network namespace, and when it's not specified the default network namespace will be used. The command above will result in something like:
 
@@ -37,7 +45,9 @@ Command following `ip netns exec <netns_name>` will be executed under the specif
 
 Note that we need to use `ip link set netns` a bit differently when we want to move a link layer device back to the default network namespace. We can't tell the name of the default network namespace, so we need to use the pid of the init process (which is `1`) to specify this:
 
-`sudo ip link set eth1 netns 1`
+```shell
+sudo ip link set eth1 netns 1
+```
 
 # Bridge and Veth
 
@@ -49,25 +59,35 @@ Now that we have a bridge set up, we need to attach network interface to it (or,
 
 We can first create a pair of veths with the following command:
 
-`sudo ip link add veth_br type veth peer name veth_my_netns`
+```shell
+sudo ip link add veth_br type veth peer name veth_my_netns
+```
 
 And then make one veth mastered by the Docker bridge:
 
-`sudo ip link set veth_br master docker1`
+```shell
+sudo ip link set veth_br master docker1
+```
 
 Now we need to put the other veth into the network namespace that we need to talk to. Say we want to communicate with `my_netns` that we just created, then we need to do:
 
-`sudo ip link set veth_my_netns netns my_netns`
+```shell
+sudo ip link set veth_my_netns netns my_netns
+```
 
 Turn on both virtual interfaces:
 
-`sudo ip link set veth_br up`
+```shell
+sudo ip link set veth_br up
 
-`sudo ip link set veth_my_netns up`
+sudo ip link set veth_my_netns up
+```
 
 Last but not least, attach protocol address to the veth on the `my_netns` side:
 
-`sudo ip netns exec my_netns ip address add 123.456.0.0/16 dev veth_my_netns`
+```shell
+sudo ip netns exec my_netns ip address add 123.456.0.0/16 dev veth_my_netns
+```
 
 Now traffic from CIDR `123.456.0.0/16` in `my_netns` namespace can be received by `docker1` bridge and further forwarded to containers. The diagram below illustrate the result after we've gone through these steps.
 
@@ -81,7 +101,9 @@ Linux iptables manages fire wall rules through a complex control flow chart (as 
 
 In previous sections we've created a network namespace and connect containers to it via the use of bridge and veth. Now if we want to allow certain external traffic to arrive at our containers, we can use `iptables` command to add specific policies. For example, if we want to allow the subnet `10.0.0.0/16` to send request to port `1234` to a container with ip address `111.222.33.4`, but we don't want to expose this port directly, we can add a `PREROUTING` rule to the `nat` table in `my_netns` namespace:
 
-`sudo ip netns exec cns iptables -t nat -A PREROUTING -p tcp -s 10.0.0.0/16 --dport 1234 -j DNAT --to-destination 111.222.33.4:1234`
+```shell
+sudo ip netns exec cns iptables -t nat -A PREROUTING -p tcp -s 10.0.0.0/16 --dport 1234 -j DNAT --to-destination 111.222.33.4:1234
+```
 
 This way, the request from `10.0.0.0/16` will be forwarded to the desired container port if it's sent to the public address of `eth1` network interface of `my_netns`.
 
