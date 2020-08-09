@@ -1,7 +1,8 @@
 ---
 title: "Wrapping up Fundamentals of Go Interface: Representation, Reflection and More"
 date: 2020-07-31T21:21:33-07:00
-draft: true
+draft: false
+tags: ['Go']
 ---
 
 Interface is, in many's opinion, the shiniest part of the design of Go, and it adds flexibility to this statically typed language. As a noob gopher, I feel that leveraging interfaces does help deliver elegant and maintainable code. However, when not fully understood, interface might also be a great source of confusion. In this post, we will target some fundamental yet a bit complex part of Go interface, namely, its representation, its metaprogramming in reflection, and the role it plays in the new proposal of Go generics.
@@ -31,7 +32,7 @@ i = myInt
 
 We essentially generate a structure like this:
 
-![alt text](/static/images/interface/interface_variable.jpg "representation")
+![alt text](/images/interface/interface_variable.jpg "representation")
 
 The `Type` field is a type pointer that points to type metadata. Now when we check the type of this variable, we are actually using `i.table->Type` under the hood. When we call a function using the interface variable, the pointer that points to the actual `MyInt` data will be passed to the function pointers arranged (`String()` in this example) in interface table (essentially `(*MyInt).String()`).
 
