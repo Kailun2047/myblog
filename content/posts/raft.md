@@ -2,6 +2,7 @@
 title: "Very Brief Q&As on Raft"
 date: 2021-01-29T11:09:50-08:00
 draft: false
+tags: ['Distributed Systems']
 ---
 
 # Introduction
