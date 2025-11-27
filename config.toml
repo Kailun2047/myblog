@@ -5,8 +5,8 @@ theme = "hugo-theme-m10c"
 
 [params]
     author = "Kailun Li"
-    description = "I'm an university new grad and a n00b software engineer. This blog is primarily about my learning path and (tech and non-tech) thoughts."
-    avatar = "avatar.jpg"
+    description = "Learn, build, connect, think."
+    avatar = "photo.jpeg"
 
     [[params.social]]
         name = "github"
