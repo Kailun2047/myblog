@@ -5,7 +5,7 @@ theme = "hugo-theme-m10c"
 
 [params]
     author = "Kailun Li"
-    description = "Learn, build, connect, think."
+    description = "Learn. Think. Build. Connect."
     avatar = "photo.jpeg"
 
     [[params.social]]
