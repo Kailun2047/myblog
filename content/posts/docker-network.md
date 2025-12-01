@@ -2,7 +2,7 @@
 title: "Docker Network and Linux Network Namespace"
 date: 2020-05-23T19:29:09-07:00
 draft: false
-tags: ['docker', 'linux']
+tags: ['docker', 'linux', 'n00b']
 ---
 
 In Docker we can create a new network using `docker network create` with several options. In this post we will take a look at some Linux networking concepts that are used, the basic Docker networking concepts, and how we can use these to construct a custom container network.

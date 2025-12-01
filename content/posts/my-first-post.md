@@ -2,7 +2,7 @@
 title: "Blog Set Up"
 date: 2019-12-15T16:18:54-05:00
 draft: false
-tags: ['Hugo']
+tags: ['Hugo', 'n00b']
 ---
 
 # Framework

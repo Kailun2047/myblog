@@ -2,7 +2,7 @@
 title: "Wrapping up Fundamentals of Go Interface: Representation, Reflection and More"
 date: 2020-07-31T21:21:33-07:00
 draft: false
-tags: ['Go']
+tags: ['Go', 'n00b']
 ---
 
 Interface is, in many's opinion, the shiniest part of the design of Go, and it adds flexibility to this statically typed language. As a noob gopher, I feel that leveraging interfaces does help deliver elegant and maintainable code. However, when not fully understood, interface might also be a great source of confusion. In this post, we will target some fundamental yet a bit complex part of Go interface, namely, its representation, its metaprogramming in reflection, and the role it plays in the new proposal of Go generics.

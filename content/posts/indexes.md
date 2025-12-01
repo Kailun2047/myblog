@@ -2,7 +2,7 @@
 title: "Index Fundamentals of Relational Database"
 date: 2021-02-21T19:45:34-08:00
 draft: false
-tags: ['Database', 'MySQL']
+tags: ['Database', 'MySQL', 'n00b']
 ---
 
 Knowledge of database systems is essential to software engineers, and it's unfortunate that I don't have much exposure to databases (especially relational ones) at work. Luckily, there's this [highly rated database course](https://15445.courses.cs.cmu.edu/fall2020/) from CMU with quite a lot of learning materials, which provides me with a good chance to catch up on this area.

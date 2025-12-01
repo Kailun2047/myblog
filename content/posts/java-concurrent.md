@@ -2,7 +2,7 @@
 title: "Revisit Concurrent Programming in Java -- Threads and Locks"
 date: 2019-12-28T12:38:25-05:00
 draft: false
-tags: ['Java', 'Concurrent']
+tags: ['Java', 'Concurrent', 'n00b']
 ---
 
 Not long ago I went through the "Concurrent Programming in Java" course on Coursera. Though the contents involved are very fundamental, I felt it's necessary to give them a revisit since they are building blocks of more advanced contents in concurrent world.
